@@ -2,6 +2,9 @@ package com.example.practica.service;
 
 import com.example.practica.model.Cliente;
 import com.example.practica.repository.ClienteRepository;
+
+import lombok.RequiredArgsConstructor;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,13 +14,12 @@ import java.util.List;
 // Derfine COMO se ejecutan las acciones en codigo de ClienteService utiizando el Repositorio
 // Facilita cambiar la logica o crear pruebas unitarias sin afectar el Controllador
 @Service 
+@RequiredArgsConstructor 
 // Implementacion de los metodos definidos en el contrato de ClienteService
 public class ClienteServiceImpl implements ClienteService {
+    
     private final ClienteRepository clienteRepository;
-    // INYECCION DE DEPENDENCIAS POR CONSTRUCTOR
-    public ClienteServiceImpl(ClienteRepository clienteRepository) {
-        this.clienteRepository = clienteRepository;
-    }
+    
 
     @Override 
     public Cliente crear(Cliente cliente) {

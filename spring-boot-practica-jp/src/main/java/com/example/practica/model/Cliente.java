@@ -28,5 +28,5 @@ public class Cliente {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn (name = "informacion_id", referencedColumnName = "id")
 
-    private Informacion informacion;
+    private InformacionLaboral informacionLaboral;
 }
